@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="jumbotron">
+    <h1>Employee List</h1>
+    <p>Click here for a quick list of all employees.</p>
+    <p><a class="btn btn-lg btn-primary" href="#" role="button">Quick Name List</a></p>
+</div>
+
+<!-- Example row of columns -->
+<div class="row">
+    <div class="col-lg-4">
+        <h2>Add Employee</h2>
+        <p>Add employee to the database.</p>
+        <p><a class="btn btn-success" href="#" role="button">Add &raquo;</a></p>
+    </div>
+    <div class="col-lg-4">
+        <h2>Update Employee</h2>
+        <p>Update employee information from the database.</p>
+        <p><a class="btn btn-success" href="#" role="button">Update &raquo;</a></p>
+    </div>
+    <div class="col-lg-4">
+        <h2>Delete Employee</h2>
+        <p>Remove from the database.</p>
+        <p><a class="btn btn-danger" href="#" role="button">Delete &raquo;</a></p>
+    </div>
+</div>
+{% endblock %}
