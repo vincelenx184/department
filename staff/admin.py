@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import EmployeeDetail
+
+class EmployeeDetailAdmin(admin.ModelAdmin):
+    exclude = ('slug',)
+    list_display = ('last_name', 'first_name',)
+
+admin.site.register(EmployeeDetail, EmployeeDetailAdmin)
+
