@@ -4,9 +4,11 @@ from .models import EmployeeDetail
 
 def names(request):
 
-    template = 'staff/names.html'
+
 
     details = EmployeeDetail.objects.all()
+
+    template = 'staff/names.html'
 
     context = {
 

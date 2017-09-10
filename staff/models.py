@@ -8,14 +8,7 @@ class EmployeeDetail(models.Model):
     phone_number = models.IntegerField()
     id_number = models.IntegerField()
     currently_employed = models.BooleanField(default=False)
-    slug = models.SlugField(max_length=200, unique=True)
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.last_name)
-        super(EmployeeDetail, self).save(*args, **kwargs)
-
-    def get_absolute_url(self):
-        return reverse('staff:EmployeeDetail', args=[self.slug])
 
     def __str__(self):
         return self.last_name
