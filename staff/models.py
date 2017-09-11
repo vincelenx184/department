@@ -6,7 +6,7 @@ class EmployeeDetail(models.Model):
     last_name = models.CharField(max_length=200)
     first_name = models.CharField(max_length=200)
     phone_number = models.IntegerField()
-    id_number = models.IntegerField()
+    id_number = models.IntegerField(blank=True, null=True)
     currently_employed = models.BooleanField(default=False)
 
 

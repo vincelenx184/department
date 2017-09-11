@@ -43,12 +43,14 @@
         <h3 class="text-muted">Staff Source</h3>
         <nav>
             <ul class="nav nav-justified">
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'staff:names' %}">Names</a></li>
+                {% with url_name=request.resolver_match.url_name %}
+                <li class="{% if url_name == 'home' %}active{% endif %}"><a href="{% url 'home' %}">Home</a></li>
+                <li class="{% if url_name == 'names' %}active{% endif %}"><a href="{% url 'staff:names' %}">Names</a></li>
                 <li><a href="#">Department</a></li>
                 <li><a href="#">History</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
+                {% endwith %}
             </ul>
         </nav>
     </div>
