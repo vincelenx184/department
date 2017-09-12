@@ -1,12 +1,12 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
+from django.http import HttpResponse, HttpResponseRedirect
 
 from .models import EmployeeDetail
 from .forms import EmployeeDetailAddEmployeeForm
 
 
 def names(request):
-
 
 
     details = EmployeeDetail.objects.all()
@@ -29,8 +29,9 @@ def add_employee(request):
     if form.is_valid():
         instance = form.save(commit=False)
 
-        if EmployeeDetail.objects.filter(id=instance.id).exists():
+        if EmployeeDetail.objects.filter(email=instance.email).exists():
             messages.warning(request, 'You already exist in the data-base', 'alert alert-warning alert-dismissible')
+
 
         else:
             instance.save()
@@ -39,8 +40,7 @@ def add_employee(request):
     context = {
 
         'form': form
-
-    }
+  }
 
 
 
