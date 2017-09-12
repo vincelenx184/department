@@ -31,7 +31,7 @@ def add_employee(request):
 
         if EmployeeDetail.objects.filter(email=instance.email).exists():
             messages.warning(request, 'You already exist in the data-base', 'alert alert-warning alert-dismissible')
-
+            return redirect('staff:add_employee')
 
         else:
             instance.save()
