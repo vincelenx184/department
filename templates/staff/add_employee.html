@@ -1,8 +1,7 @@
+
 {% extends 'base.html' %}
 
 {% load crispy_forms_tags %}
-
-{% crispy form form.helper %}
 
 {% block content %}
 
@@ -26,12 +25,8 @@
             {% else %}
 
             <form method="POST">{% csrf_token %}
-                <div class="input-group">
-                    {% crispy form %}
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit">Subscribe</button>
-                    </span>
-                </div>
+                {{ form|crispy }}
+                <button class="btn btn-success" type="submit">Submit</button>
             </form>
 
             {% endif %}
@@ -40,6 +35,4 @@
 </div>
 
 {% endblock %}
-
-
 
