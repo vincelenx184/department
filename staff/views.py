@@ -30,12 +30,13 @@ def add_employee(request):
         instance = form.save(commit=False)
 
         if EmployeeDetail.objects.filter(email=instance.email).exists():
-            messages.warning(request, 'You already exist in the data-base', 'alert alert-warning alert-dismissible')
+            messages.warning(request, 'This email already exists in the Database', 'alert alert-warning alert-dismissible')
             return redirect('staff:add_employee')
 
         else:
             instance.save()
-            messages.success(request, 'Your name has been submitted', 'alert alert-success alert-dismissible')
+            messages.success(request, 'This name has been submitted to the Database', 'alert alert-success alert-dismissible')
+            return redirect('staff:add_employee')
 
     context = {
 
@@ -49,6 +50,9 @@ def add_employee(request):
     return render(request, template, context)
 
 
+def update_employee(request):
+
+    update = EmployeeDetail.
 
 
 
