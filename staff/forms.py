@@ -11,7 +11,7 @@ class EmployeeDetailAddEmployeeForm(forms.ModelForm):
     class Meta:
 
         model = EmployeeDetail
-        fields = ['first_name', 'last_name', 'email']
+        fields = ['first_name', 'last_name', 'email', 'phone_number', 'id_number', 'currently_employed']
 
         def clean_email(self):
             email = self.clean_data.get('email')
