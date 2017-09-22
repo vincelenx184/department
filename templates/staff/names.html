@@ -20,10 +20,10 @@
     {% for item in details %}
     <tr>
         <th></th>
-        <td><a href="{% url 'staff:details' pk=item.pk %}">{{ item.last_name }}</a></td>
+        <td><a href="#">{{ item.last_name }}</a></td>
         <td>{{item.first_name}}</td>
         <td>{{item.currently_employed}}</td>
-        <td><a href="{% url 'staff:edit_employee' pk=item.pk %}">Edit</a></td>
+        <td><a href="#">Edit</a></td>
     </tr>
     {% endfor %}
     </tbody>

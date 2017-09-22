@@ -1,6 +1,5 @@
 from django.db import models
-from django.core.urlresolvers import reverse
-from django.template.defaultfilters import slugify
+
 
 class EmployeeDetail(models.Model):
 
@@ -17,10 +16,6 @@ class EmployeeDetail(models.Model):
     id_number = models.IntegerField(blank=True, null=True)
     currently_employed = models.CharField(max_length=30, choices=EMPLOYEE_STATUS, default=False)
     email = models.EmailField(null=True)
-
-
-
-
 
     def __str__(self):
         return self.last_name
