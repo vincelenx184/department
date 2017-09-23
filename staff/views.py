@@ -4,53 +4,19 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.conf import settings
 from django.template.loader import get_template
 
-#from .models import EmployeeDetail
-#from .forms import EmployeeDetailAddEmployeeForm
+from .models import Employee
+from .forms import EmployeeAddEmployeeForm
 
 
-def names(request):
+def list_of_employees(request):
 
-    details = EmployeeDetail.objects.all()
+    emps = Employee.objects.all()
 
-    template = 'staff/names.html'
-
-    context = {
-
-        'details': details,
-
-    }
-
-    return render(request, template, context)
-
-
-def add_employee(request):
-
-
-
-    form = EmployeeDetailAddEmployeeForm(request.POST or None)
-
-    if form.is_valid():
-        instance = form.save()
-
-        if EmployeeDetail.objects.filter(email=instance.email).exists():
-            messages.warning(request, 'This email already exists in the Database', 'alert alert-warning alert-dismissible')
-            return redirect('staff:add_employee')
-
-        else:
-            instance.save()
-            messages.success(request, 'This name has been submitted to the Database', 'alert alert-success alert-dismissible')
-            return redirect('staff:add_employee')
-
-
+    template = 'staff/list_of_employees.html'
 
     context = {
-
-        'form': form,
+       'emps': emps,
     }
-
-
-
-    template = 'staff/add_employee.html'
 
     return render(request, template, context)
 
