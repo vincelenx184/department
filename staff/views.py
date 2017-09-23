@@ -4,8 +4,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.conf import settings
 from django.template.loader import get_template
 
-from .models import EmployeeDetail
-from .forms import EmployeeDetailAddEmployeeForm
+#from .models import EmployeeDetail
+#from .forms import EmployeeDetailAddEmployeeForm
 
 
 def names(request):
@@ -25,11 +25,12 @@ def names(request):
 
 def add_employee(request):
 
+
+
     form = EmployeeDetailAddEmployeeForm(request.POST or None)
 
     if form.is_valid():
         instance = form.save()
-
 
         if EmployeeDetail.objects.filter(email=instance.email).exists():
             messages.warning(request, 'This email already exists in the Database', 'alert alert-warning alert-dismissible')
@@ -40,10 +41,12 @@ def add_employee(request):
             messages.success(request, 'This name has been submitted to the Database', 'alert alert-success alert-dismissible')
             return redirect('staff:add_employee')
 
+
+
     context = {
 
         'form': form,
-  }
+    }
 
 
 
