@@ -16,7 +16,7 @@ class Employee(models.Model):
     job_title = models.CharField(max_length=250)
     first_name = models.CharField(max_length=250)
     last_name = models.CharField(max_length=250)
-    id_number = models.IntegerField(default=0)
+    id_number = models.IntegerField()
     currently_employed = models.CharField(max_length=30, choices=EMPLOYEE_STATUS)
     email = models.EmailField()
     slug = models.SlugField(max_length=250, unique=True)

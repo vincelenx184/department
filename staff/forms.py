@@ -18,7 +18,7 @@ class EmployeeAddEmployeeForm(forms.ModelForm):
             'last_name': forms.TextInput(attrs={'placeholder': 'Last Name'}),
             'id_number': forms.TextInput(attrs={'placeholder': 'I.D. Number'}),
             'email': forms.TextInput(attrs={'placeholder': 'Email'}),
-            'currently_employed': forms.TextInput(attrs={'placeholder': 'Currently Employed'}),
+
         }
 
         fields = ('job_title', 'first_name', 'last_name', 'id_number', 'email', 'currently_employed')
@@ -26,6 +26,8 @@ class EmployeeAddEmployeeForm(forms.ModelForm):
         def clean_email(self):
             email = self.clean_data.get('email')
             return email
+
+
 
 
 
