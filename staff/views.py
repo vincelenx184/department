@@ -76,6 +76,19 @@ def delete_employee(request, slug):
     return redirect('staff:list_of_employees')
 
 
+def employee_detail(request):
+
+     employee = Employee.objects.all()
+
+     template = 'staff/employee_detail.html'
+
+     context = {'employee': employee}
+
+     return render(request, template, context)
+
+
+
+
 
 
 

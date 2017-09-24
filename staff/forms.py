@@ -11,15 +11,15 @@ class EmployeeAddEmployeeForm(forms.ModelForm):
     class Meta:
         model = Employee
 
-        widgets = {
-
-            'job_title': forms.TextInput(attrs={'placeholder': 'Job Title'}),
-            'first_name': forms.TextInput(attrs={'placeholder': 'First Name'}),
-            'last_name': forms.TextInput(attrs={'placeholder': 'Last Name'}),
-            'id_number': forms.TextInput(attrs={'placeholder': 'I.D. Number'}),
-            'email': forms.TextInput(attrs={'placeholder': 'Email'}),
-
-        }
+        # widgets = {
+        #
+        #     'job_title': forms.TextInput(attrs={'placeholder': 'Job Title'}),
+        #     'first_name': forms.TextInput(attrs={'placeholder': 'First Name'}),
+        #     'last_name': forms.TextInput(attrs={'placeholder': 'Last Name'}),
+        #     'id_number': forms.TextInput(attrs={'placeholder': 'I.D. Number'}),
+        #     'email': forms.TextInput(attrs={'placeholder': 'Email'}),
+        #
+        # }
 
         fields = ('job_title', 'first_name', 'last_name', 'id_number', 'email', 'currently_employed')
 

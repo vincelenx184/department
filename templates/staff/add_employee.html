@@ -13,7 +13,7 @@
             <h3 class="text-center">Add Employee</h3>
 
             <form method="POST">{% csrf_token %}
-                {% crispy form %}
+               {{ form|crispy }}
 
                 <button class="btn btn-success" type="submit">Submit</button>
             </form>
