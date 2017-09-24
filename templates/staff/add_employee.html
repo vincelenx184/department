@@ -2,6 +2,8 @@
 
 {% load crispy_forms_tags %}
 
+{% crispy form form.helper %}
+
 {% block content %}
 
 
@@ -11,7 +13,7 @@
             <h3 class="text-center">Add Employee</h3>
 
             <form method="POST">{% csrf_token %}
-                {{ form|crispy }}
+                {% crispy form %}
 
                 <button class="btn btn-success" type="submit">Submit</button>
             </form>
