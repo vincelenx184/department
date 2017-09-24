@@ -17,13 +17,14 @@
     </tr>
     </thead>
     <tbody>
-    {% for item in details %}
+    {% for item in employee %}
     <tr>
         <th></th>
-        <td><a href="#">{{ item.last_name }}</a></td>
+        <td>{{ item.last_name }}</a></td>
         <td>{{item.first_name}}</td>
         <td>{{item.currently_employed}}</td>
-        <td><a href="#">Edit</a></td>
+        <td><a href="{% url 'staff:edit_employee' slug=item.slug %}">Edit</a></td>
+        <td><a href="{% url 'staff:delete_employee' slug=item.slug %}">Delete</a></td>
     </tr>
     {% endfor %}
     </tbody>

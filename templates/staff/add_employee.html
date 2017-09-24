@@ -19,24 +19,5 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4 col-sm-offset-4" style='text-align:center; padding-top:25px'>
-{% if messages %}
-
-                {% for message in messages %}
-
-                    <div {% if message.tags %} class="{{ message.tags }}" {% endif %} role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"></span></button>
-                            {{ message }}
-                    </div>
-
-                {% endfor %}
-
-{% endif %}
-        </div>
-    </div>
-</div>
-
 {% endblock %}
 

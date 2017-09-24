@@ -45,7 +45,7 @@
             <ul class="nav nav-justified">
                 {% with url_name=request.resolver_match.url_name %}
                 <li class="{% if url_name == 'home' %}active{% endif %}"><a href="{% url 'home' %}">Home</a></li>
-                <li class="{% if url_name == 'names' %}active{% endif %}"><a href="{% url 'staff:names' %}">Names</a></li>
+                <li class="{% if url_name == 'list_of_employees' %}active{% endif %}"><a href="{% url 'staff:list_of_employees' %}">Names</a></li>
                 <li><a href="#">Department</a></li>
                 <li><a href="#">History</a></li>
                 <li><a href="#">About</a></li>
@@ -54,6 +54,8 @@
             </ul>
         </nav>
     </div>
+
+    {% include "messages.html" %}
 
     {% block content %}
 

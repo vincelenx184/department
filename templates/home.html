@@ -5,25 +5,15 @@
 <div class="jumbotron">
     <h1>Employee List</h1>
     <p>Click here for a quick list of all employees.</p>
-    <p><a class="btn btn-lg btn-primary" href="{% url 'staff:names' %}" role="button">Quick Name List</a></p>
+    <p><a class="btn btn-lg btn-primary" href="{% url 'staff:list_of_employees' %}" role="button">Quick Name List</a></p>
 </div>
 
 <!-- Example row of columns -->
-<div class="row">
-    <div class="col-lg-4">
-        <h2>Add Employee</h2>
-        <p>Add employee to the database.</p>
-        <p><a class="btn btn-success" href="{% url 'staff:add_employee' %}" role="button">Add &raquo;</a></p>
-    </div>
-    <div class="col-lg-4">
-        <h2>Update Employee</h2>
-        <p>Update employee information from the database.</p>
-        <p><a class="btn btn-success" href="#" role="button">Edit &raquo;</a></p>
-    </div>
-    <div class="col-lg-4">
-        <h2>Delete Employee</h2>
-        <p>Remove from the database.</p>
-        <p><a class="btn btn-danger" href="#" role="button">Delete &raquo;</a></p>
-    </div>
+<div class="jumbotron">
+    <h1>Add Employee</h1>
+    <p>Click here to add employees.</p>
+    <p><a class="btn btn-lg btn-success" href="{% url 'staff:add_employee' %}" role="button">Add</a></p>
 </div>
 {% endblock %}
+
+
