@@ -51,6 +51,10 @@ def edit_employee(request, slug):
         if form.is_valid():
             employee = form.save(commit=False)
             employee.coordinator = request.user
+
+
+
+
             employee.save()
             messages.success(request, 'Your Employee Profile has been updated!')
             return redirect('staff:list_of_employees')
@@ -84,7 +88,7 @@ def employee_detail(request):
 
      context = {'employee': employee}
 
-     return render(request, template, context)
+     return render(request, template, context) # this is a comment
 
 
 
